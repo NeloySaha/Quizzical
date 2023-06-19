@@ -3,9 +3,17 @@ import { HomePage } from "./components/HomePage";
 import { Question } from "./components/Question";
 import { convert } from "html-to-text";
 import "./styles.css";
+import { Loader } from "./components/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
   const [home, setHome] = useState(true);
+
+  const [questionType, setQuestionType] = useState({
+    Category: "",
+    difficulty: "",
+  });
 
   const [questionData, setQuestionData] = useState([]);
   const [assessment, setAssessment] = useState(false);
@@ -18,7 +26,11 @@ function App() {
   };
 
   useEffect(() => {
-    newDataSet();
+    setQuestionType({
+      Category: "",
+      difficulty: "",
+    });
+    setHome(true);
     setAssessment(false);
     setReset(true);
     setCounter(0);
@@ -26,7 +38,7 @@ function App() {
 
   function newDataSet() {
     fetch(
-      "https://opentdb.com/api.php?amount=15&category=18&difficulty=medium&type=multiple"
+      `https://opentdb.com/api.php?amount=15&category=${questionType.Category}&difficulty=${questionType.difficulty}&type=multiple`
     )
       .then((response) => response.json())
       .then((responseJsonData) => {
@@ -50,6 +62,8 @@ function App() {
                 ansArr.push(optArr[randNum]);
               }
             }
+
+            setLoading((prev) => !prev);
 
             return {
               question: plainQuestion,
@@ -78,8 +92,6 @@ function App() {
     });
 
     setAssessment(true);
-
-    console.log(questionData);
   }
 
   function handleChange(event) {
@@ -89,6 +101,16 @@ function App() {
       const newData = prevData.map((data) =>
         data.question === name ? { ...data, user_answer: value } : data
       );
+
+      return newData;
+    });
+  }
+
+  function handleOptionsChange(event) {
+    const { name, value } = event.target;
+
+    setQuestionType((prevData) => {
+      const newData = { ...prevData, [name]: value };
 
       return newData;
     });
@@ -105,10 +127,21 @@ function App() {
       />
     ));
 
-  return (
+  const toggleHome = () => {
+    setLoading((prev) => !prev);
+    newDataSet();
+    setHome(false);
+  };
+
+  return !loading ? (
     <div className="main-body">
       {home ? (
-        <HomePage toggleHome={() => setHome(false)} />
+        <HomePage
+          toggleHome={() => toggleHome()}
+          handleOptionsChange={handleOptionsChange}
+          Category={questionType.Category}
+          difficulty={questionType.difficulty}
+        />
       ) : (
         <div className="question-container">
           {questions}
@@ -131,6 +164,8 @@ function App() {
         </div>
       )}
     </div>
+  ) : (
+    <Loader />
   );
 }
 
