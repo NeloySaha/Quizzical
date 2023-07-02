@@ -8,7 +8,7 @@ export const Question = ({
 }) => {
   const primaryColorPicker = (value) => {
     return {
-      backgroundColor: user_answer === value ? "#D6DBF5" : "#FFFFFF",
+      backgroundColor: user_answer === value && "#D6DBF5",
       border: user_answer === value && "none",
     };
   };

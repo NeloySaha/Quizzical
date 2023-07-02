@@ -8,14 +8,14 @@ export const HomePage = ({
 }) => {
   const categoryColorPicker = (value) => {
     return {
-      backgroundColor: Category === `${value}` ? "#D6DBF5" : "#FFFFFF",
+      backgroundColor: Category === `${value}` && "#D6DBF5",
       border: Category === `${value}` && "none",
     };
   };
 
   const diffColorPicker = (value) => {
     return {
-      backgroundColor: difficulty === value ? "#D6DBF5" : "#FFFFFF",
+      backgroundColor: difficulty === value && "#D6DBF5",
       border: difficulty === value && "none",
     };
   };
