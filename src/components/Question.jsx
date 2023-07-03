@@ -9,7 +9,7 @@ export const Question = ({
   const primaryColorPicker = (value) => {
     return {
       backgroundColor: user_answer === value && "#D6DBF5",
-      border: user_answer === value && "none",
+      border: user_answer === value && "1px solid transparent",
     };
   };
 
@@ -17,13 +17,13 @@ export const Question = ({
     if (value === user_answer && value !== correct_answer) {
       return {
         backgroundColor: "#F8BCBC",
-        border: "none",
+        border: "1px solid transparent",
         opacity: "0.5",
       };
     } else if (value === correct_answer) {
       return {
         backgroundColor: "#94D7A2",
-        border: "none",
+        border: "1px solid transparent",
       };
     } else {
       return {

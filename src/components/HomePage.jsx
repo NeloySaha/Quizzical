@@ -9,20 +9,21 @@ export const HomePage = ({
   const categoryColorPicker = (value) => {
     return {
       backgroundColor: Category === `${value}` && "#D6DBF5",
-      border: Category === `${value}` && "none",
+      border: Category === `${value}` && "1px solid transparent",
     };
   };
 
   const diffColorPicker = (value) => {
     return {
       backgroundColor: difficulty === value && "#D6DBF5",
-      border: difficulty === value && "none",
+      border: difficulty === value && "1px solid transparent",
     };
   };
 
   return (
     <div className="body-part">
       <p className="title">Quizzical</p>
+
       <p className="description">Test yourself in a few seconds</p>
 
       <div className="category">
