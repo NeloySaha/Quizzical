@@ -30,7 +30,7 @@ export const HomePage = ({
         <form>
           <div>
             <div className="category-question">Choose a Category:</div>
-            <div className="options">
+            <div className="options home-options">
               <div className="input-container" style={categoryColorPicker(9)}>
                 <input
                   type="radio"
@@ -96,7 +96,7 @@ export const HomePage = ({
         <form>
           <div>
             <div className="category-question">Select Difficulty:</div>
-            <div className="options">
+            <div className="options home-options">
               <div className="input-container" style={diffColorPicker("easy")}>
                 <input
                   type="radio"

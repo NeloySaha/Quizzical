@@ -82,14 +82,15 @@ p {
   font-family: "Karla";
   font-weight: 700;
   font-size: 20px;
-  line-height: 19px;
+  line-height: 20px;
   color: #293264;
   padding: 12px 0px;
+  letter-spacing: 0.25px;
 }
 
 .question-container {
-  margin: 0px 75px;
-  padding: 40px 0px;
+  margin: 0px 48px;
+  padding: 48px 0px;
   width: 70vw;
   height: 100%;
   display: flex;
@@ -103,29 +104,30 @@ p {
 
 .options {
   display: flex;
-  gap: 13px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .input-container {
   display: flex;
   position: relative;
-  height: 22px;
-  padding: 5px 30px;
+
+  padding: 6px 24px;
   border: 1px solid #4d5b9e;
   justify-content: center;
   align-items: center;
-  border-radius: 13px;
+  border-radius: 11px;
   overflow: hidden;
 
   font-family: "Inter";
 
   font-weight: 500;
   font-size: 13px;
-  line-height: 12px;
+  line-height: 16px;
   transition: all 0.3s ease;
 
   color: #293264;
-  /* background-color: red; */
+  white-space: nowrap;
 }
 
 .input-container input {
@@ -140,9 +142,8 @@ p {
 
 .input-container:hover {
   background-color: #d6dbf5;
-  box-shadow: 0px 0px 2px #293264;
   border: 1px solid transparent;
-  transform: scale(1);
+  transform: translateY(-2px);
 }
 
 .check-button {
@@ -333,5 +334,17 @@ p {
   90%,
   100% {
     transform: rotate(-640deg);
+  }
+}
+
+/* queries */
+
+@media (max-width: 796px) {
+  .question-container {
+    margin: 0px 32px;
+  }
+
+  .home-options {
+    flex-direction: column;
   }
 }
