@@ -2,6 +2,8 @@
 
 Welcome to **Quizzical** - the ultimate destination for quiz enthusiasts! Dive into the world of knowledge and fun by participating in quizzes of your favorite categories. Whether you're looking to challenge yourself or simply have a good time, Quizzical has something for everyone.
 
+### 🚀 VISIT LIVE DEMO _[HERE](https://quizzical-kappa-navy.vercel.app/)_
+
 ## How to Play 🧠
 
 1. **Select a Category:** Choose from a range of categories that pique your interest. Whether it's Computer Science, History, General Knowledge, or sports – we've got you covered.
@@ -50,7 +52,5 @@ To contribute:
 3. Make your changes and improvements.
 4. Test thoroughly.
 5. Open a pull request, explaining your changes and their benefits.
-
-Visit Quizzical now: [https://quizzical-kappa-navy.vercel.app/](https://quizzical-kappa-navy.vercel.app/)
 
 \_Note: This project was developed as part of a React course challenge on Scrimba by **Bob Ziroll.**
