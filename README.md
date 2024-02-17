@@ -41,16 +41,4 @@ Excited to jump in? Here's how you can get started:
 
 4. **Explore Online:** Don't want to set up locally? No worries! Check out the live version of the website [here](https://quizzical-kappa-navy.vercel.app/).
 
-## Contribute 🤝
-
-We're open to contributions! If you're passionate about quizzes, code, or both, feel free to contribute to the project. Whether you want to suggest new features, report issues, or enhance the user experience, your input is highly valued.
-
-To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your contribution.
-3. Make your changes and improvements.
-4. Test thoroughly.
-5. Open a pull request, explaining your changes and their benefits.
-
 \_Note: This project was developed as part of a React course challenge on Scrimba by **Bob Ziroll.**
